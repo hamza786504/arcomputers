@@ -1,49 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- for bootstrap 4 we should use it to make a page responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php 
+include_once("partial/header.php"); 
+include_once("config.php"); 
+?>
+	<div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                        <div class="box">
+                                <p>
+                                        <?php echo mysqli_num_rows(mysqli_query($conn,"SELECT product_id FROM products")); ?>
+                                        <br/>
+                                        <span>Products</span>
+                                </p>
+                                <i class="box-icon fa fa-sitemap"></i>
+                        </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                        <div class="box">
+                                <p>0<br/><span>Orders</span></p>
+                                <i class="fa fa-shopping-bag box-icon"></i>
+                        </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                        <div class="box">
+                                <p>0<br/><span>Delevered</span></p>
+                                <i class="box-icon fa fa-location-arrow"></i>
+                        </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                        <div class="box">
+                                <p>0<br/><span>Pending</span></p>
+                                <i class="fa fa-clock-o box-icon"></i>
+                        </div>
+                </div>
+        </div>
+	<br/><br/>
+	<div class="row">
+                <div class="col-8">
+                        <div class="box-8">
+                                <div class="content-box">
+                                        <p>Top Selling Projects <span>Sell All</span></p>
+                                        <br/>
+                                        <table>
+                                                <tr>
+                                                        <th>Company</th>
+                                                        <th>Contact</th>
+                                                        <th>Country</th>
+                                                </tr>
+                                                <tr>
+                                                        <td>Alfreds Futterkiste</td>
+                                                        <td>Maria Anders</td>
+                                                        <td>Germany</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Centro comercial Moctezuma</td>
+                                                        <td>Francisco Chang</td>
+                                                        <td>Mexico</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Ernst Handel</td>
+                                                        <td>Roland Mendel</td>
+                                                        <td>Austria</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Island Trading</td>
+                                                        <td>Helen Bennett</td>
+                                                        <td>UK</td>
+                                                </tr>
+                                        </table>
+                                </div>
+                        </div>
+                </div>
+                <div class="col-4">
+                        <div class="box-4">
+                                <div class="content-box">
+                                        <p>Total Sale <span>Sell All</span></p>
+                                        <div class="circle-wrap">
+                                                <div class="circle">
+                                                        <div class="mask full">
+                                                                <div class="fill"></div>
+                                                        </div>
+                                                        <div class="mask half">
+                                                                <div class="fill"></div>
+                                                        </div>
+                                                        <div class="inside-circle"> 70% </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
 
-            <!-- link bootstrap 4 css file -->
-    <link rel="stylesheet" href="../css/bootstrap 4/bootstrap.min.css">
-
-            <!-- Use bootstrap 4 CDN path -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-            <!-- link bootstrap 5 css file -->
-    <link rel="stylesheet" href="../css/bootstrap 5/bootstrap.min.css">
-
-            <!-- Use bootstrap 5 CDN path for css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-            <!-- link fontawesome css file -->
-    <link rel="stylesheet" href="../css/font-awesome/font awesome.min.css">
-            <!-- link animate.css -->
-    <link rel="stylesheet" href="animate.css/animate.css">
-            <!-- link custom css file -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Website Name</title>
-</head>
-<body>
-    
-</body>
-                    <!-- Use jQuery CDN path -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-                    <!-- Use bootstrap 4 CDN path of popper.js and bootstrap.js instead of bundle.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-                    <!-- Use bootstrap 5 CDN path for bundle.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-                    <!-- Use font-awesome js file -->
-    <script src="../js/font awesome/font awesome.min.js"></script>
-    <script src="../wow.js/wow.min.js"></script>
-    <script> new WOW().init(); </script>
-    <script src="js/index.js"></script>
-</html>
+<?php include_once("partial/footer.php"); ?>

@@ -14,6 +14,7 @@
             <!-- link custom css file -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/shop.css">
     <link rel="stylesheet" href="css/media-query.css">
 
     <title>Al Rahman Computers</title>

@@ -23,7 +23,7 @@
         <div class="card-body">
           <span class="tag cheap_tag">Cheap</span>
           <h4 class="product_title">
-            Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor
+            <a href="product.php">Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor</a>
           </h4>
           <p class="product_description">
             This iMac 2020 comes in a Space Gray colour it delivers visuals with
@@ -48,12 +48,11 @@
         <div class="card-body">
           <span class="tag trending_tag">Trending</span>
           <h4 class="product_title">
-            Apple Imac MHK23 - 8th Gen Core i3 3.6Ghz processor 08GB 256GB SSD
+            <a href="product.php">Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor</a>
           </h4>
           <p class="product_description">
             The latest iMac 2020 that comes in silver colour and with 4K Retina
-            display delivers impressively clear visuals, is great for content
-            creators and designers
+            display delivers impressively clear visuals, is great for 
           </p>
           <span class="price_outer mt-2"
             ><b>Rs. </b> <span class="cut-price">264,900</span>&nbsp;&nbsp;<span
@@ -74,11 +73,12 @@
         <div class="card-body">
           <span class="tag indemand_tag">In demand</span>
           <h4 class="product_title">
-            Apple Imac MHK33 - 8th Gen Core i5 3.0Ghz processor 08GB 256GB SSD
+            <a href="product.php">Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor</a>
           </h4>
           <p class="product_description">
             Let's talk about the latest iMac 2020 by the company, particularly
-            the Apple iMac MHK33.
+            the Apple iMac MHK33.content
+            creators and designers
           </p>
           <span class="price_outer mt-2"
             ><b>Rs. </b> <span class="cut-price">294,900</span>&nbsp;&nbsp;<span

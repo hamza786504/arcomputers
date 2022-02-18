@@ -1,0 +1,42 @@
+
+
+CREATE TABLE categories (
+	category_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    category_name varchar(100) NOT NULL,
+    products int NOT NULL
+);
+
+CREATE TABLE products (
+	product_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    product_name varchar(500) NOT NULL,
+    product_tagline varchar(500) NOT NULL,
+    product_description varchar(10000) NOT NULL,
+    purchase_price INT NOT NULL,
+    sale_price INT NOT NULL,
+    discounted_price INT,
+    stock INT NOT Null,
+    badge INT, 
+   	varient_one varchar(100) NOT NULL,
+    varient_two varchar(100) NOT NULL,
+    varient_three varchar(100) NOT NULL,
+    varient_four varchar(100) NOT NULL,
+    total_sales INT NOT NULL,
+    status INT NOT NULL,
+    category INT NOT NULL,
+    FOREIGN KEY (category) REFERENCES categories(category_id)
+)
+
+
+
+CREATE TABLE admin_users (
+	user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fname varchar(50) NOT NULL,
+    lname varchar(50) NOT NULL,
+    user_email varchar(100) NOT NULL UNIQUE,
+    user_password varchar(100) NOT NULL,
+    role varchar(100) NOT NULL
+)
+
+
+INSERT INTO admin_users (fname, lname, user_email , user_password, role) 
+VALUES ("demo","account","demo@gmail.com","admin","admin");
