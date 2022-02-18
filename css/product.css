@@ -1,0 +1,126 @@
+.wrapper {
+    max-width: 800px;
+    width: 95%;
+    margin: 50px auto;
+    display: flex;
+}
+.product-img {
+    flex-basis: 50%;
+    overflow: hidden;
+    text-align: center;
+}
+.product-img img {
+    max-width: 400px;
+    width: 100%;
+}
+.product-info {
+    flex-basis: 50%;
+    padding: 20px;
+}
+.product-text h1.product-title{
+    font-size: 34px;
+    color: #353535;
+}
+.product-text h2.product-tagline {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 0.1em;
+}
+.product-text p.product-description {
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.addtocart-btn{
+    height: 50px;
+    max-width: 176px; width: 100%;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    background-color: #00a553;
+    cursor: pointer;
+    outline: none;
+}
+.addtocart-btn:hover {
+    background-color: #46a174;
+}
+table.product_quantity{
+    margin: 20px 0;
+    max-width: 400px;
+    width: 100%;
+    border-collapse: collapse;
+}
+table.product_quantity tr{
+    height: 50px;
+    border-bottom: 1px solid #ebeaea;
+}
+table.product_quantity tr td{
+    width: 50%;
+    padding: 10px 0;
+}
+table.product_quantity tr td select{
+    width: 100%;
+    border: 1px solid #d2d2d2;
+    height: 35px;
+}
+table.product_quantity tr td button.wishlist-btn{
+    border: #ebeaea;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background-color: #ebeaea;
+    color: black;
+}
+table.product_quantity tr td button.wishlist-btn i.icon.fa-heart{
+    color:#353535;
+}
+table.product_quantity tr td .quantity-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.308);
+    margin-right: 0;
+}
+table.product_quantity tr td .quantity-counter .counter-change-btn ,
+    table.product_quantity tr td .quantity-counter h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px; width: 50px;
+        border: none;
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+}
+table.product_quantity tr td .quantity-counter h2{
+    line-height: 1.6;
+    font-weight: normal;
+}
+table.product_quantity tr td .quantity-counter .counter-change-btn{
+    font-size: 25px;
+}
+.varients{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.varients .varient{
+    height: 100px; width: 100px;
+    overflow: hidden;
+    margin: 5px;
+    cursor: pointer;
+}
+.varients .varient.active{
+    border: 1px solid #8d8d8d;
+}
