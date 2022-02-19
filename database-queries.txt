@@ -6,6 +6,15 @@ CREATE TABLE categories (
     products int NOT NULL
 );
 
+
+
+CREATE TABLE tags(
+	tags_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tags_name varchar(50) NOT NULL,
+    usedby_products INT NOT NULL
+)
+
+
 CREATE TABLE products (
 	product_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     product_name varchar(500) NOT NULL,
@@ -15,15 +24,17 @@ CREATE TABLE products (
     sale_price INT NOT NULL,
     discounted_price INT,
     stock INT NOT Null,
-    badge INT, 
+    tag INT,
+    FOREIGN KEY (tag) REFERENCES tags(tags_id),
    	varient_one varchar(100) NOT NULL,
-    varient_two varchar(100) NOT NULL,
-    varient_three varchar(100) NOT NULL,
-    varient_four varchar(100) NOT NULL,
+    varient_two varchar(100),
+    varient_three varchar(100),
+    varient_four varchar(100),
     total_sales INT NOT NULL,
     status INT NOT NULL,
     category INT NOT NULL,
-    FOREIGN KEY (category) REFERENCES categories(category_id)
+    FOREIGN KEY (category) REFERENCES categories(category_id),
+    date varchar(50) NOT NULL
 )
 
 
@@ -40,3 +51,13 @@ CREATE TABLE admin_users (
 
 INSERT INTO admin_users (fname, lname, user_email , user_password, role) 
 VALUES ("demo","account","demo@gmail.com","admin","admin");
+
+INSERT INTO tags (tags_name , usedby_products) VALUES ("Cheap", 0), ("Trending", 0), ("In demand", 0);
+INSERT INTO categories (category_name,products) VALUES ("imac",1), ("laptop",0), ("assessories",0);
+
+
+
+
+// addslashes($string)
+
+INSERT INTO products (product_name , product_tagline , product_description , purchase_price , sale_price , discounted_price , stock,tag , varient_one , varient_two , varient_three , varient_four , total_sales , status, category,date) VALUES ("Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor","21.5 LED Display Intel Iris Plus Graphics 640 Magic Mouse 2 & Magic Keyboard Included (Space Gray 2020)","Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum incidunt inventore obcaecati vel, iusto eum cupiditate dicta magni pariatur voluptatibus repudiandae perferendis illum quidem facilis veritatis sit distinctio enim aliquid.",10000,12000,12000,50,1,"imac.jpg","imac2.jpg","imac3.jpg","logo.jpg",0,0,1,"19-feb-2022");

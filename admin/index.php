@@ -1,6 +1,9 @@
 <?php 
 include_once("partial/header.php"); 
-include_once("config.php"); 
+include_once("server/config.php");
+if(!isset($_SESSION["user_name"])){
+        header("Location: login.php");
+}
 ?>
 	<div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6 my-2">

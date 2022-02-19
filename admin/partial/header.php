@@ -1,12 +1,13 @@
+<?php
+include_once("server/config.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- link bootstrap 5 css file -->
-    <link rel="stylesheet" href="../css/bootstrap 5/bootstrap.min.css">
-
             <!-- Use bootstrap 5 CDN path for css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -35,19 +36,27 @@
 	<div class="row">
 		<div class="col">
                         <span style="font-size:30px;cursor:pointer; color: white; text-transform: capitalize;" id="navbar_expand"  >
-                                &#9776; 
-                                <?php 
-                                        if(basename($_SERVER['PHP_SELF']) === "index.php"){ 
-                                                echo "Dashboard"; 
-                                        }else{ 
-                                                echo pathinfo(basename($_SERVER['PHP_SELF']),PATHINFO_FILENAME); 
-                                        } 
+                                &#9776;
+                                <?php
+                                        if(basename($_SERVER['PHP_SELF']) === "index.php"){
+                                                echo "Dashboard";
+                                        }else{
+                                                echo pathinfo(basename($_SERVER['PHP_SELF']),PATHINFO_FILENAME);
+                                        }
                                 ?>
                         </span>
                 </div>
                 <div class="col text-end">
 	                <div class="profile">
-		                <p>Qasim Ayub<span>Admin</span></p>
+                                <?php
+                                        $get_user_details = "SELECT fname , lname , role FROM admin_users WHERE user_id = '{$_SESSION['user_id']}'";
+                                        $get_user_details_result = mysqli_query($conn , $get_user_details);
+                                        if(mysqli_num_rows($get_user_details_result) == 1){
+                                                while($get_user_details_row = mysqli_fetch_assoc($get_user_details_result)){
+                                                        echo "<p>{$get_user_details_row['fname']} {$get_user_details_row['lname']}<span>{$get_user_details_row['role']}</span></p>";
+                                                }
+                                        }
+                                ?>
 	                </div>
                 </div>
         </div>

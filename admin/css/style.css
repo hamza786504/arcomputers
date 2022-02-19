@@ -108,6 +108,7 @@ body {
   font-size: 12px;
   display: block;
   color: #8e8b8b;
+  text-transform: capitalize;
 }
 .col-div-3 {
   width: 25%;
