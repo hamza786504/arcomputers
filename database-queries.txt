@@ -52,7 +52,7 @@ CREATE TABLE admin_users (
 INSERT INTO admin_users (fname, lname, user_email , user_password, role) 
 VALUES ("demo","account","demo@gmail.com","admin","admin");
 
-INSERT INTO tags (tags_name , usedby_products) VALUES ("Cheap", 0), ("Trending", 0), ("In demand", 0);
+INSERT INTO tags (tags_name , usedby_products) VALUES ("cheap", 0), ("trending", 0), ("in demand", 0);
 INSERT INTO categories (category_name,products) VALUES ("imac",1), ("laptop",0), ("assessories",0);
 
 

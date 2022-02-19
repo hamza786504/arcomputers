@@ -41,13 +41,17 @@ var data = 0;
 document.getElementById("quantity").innerText = data;
   
 //creation of increment function
-function increament_quantity() {
+function increament_quantity(inventory) {
+  if(data < inventory){
     data = data + 1;
+  }
     document.getElementById("quantity").innerText = data;
 }
 //creation of decrement function
 function decreament_quantity() {
-    data = data - 1;
+    if(data !== 0){
+      data = data - 1;
+    }
     document.getElementById("quantity").innerText = data;
 }
 

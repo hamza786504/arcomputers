@@ -9,89 +9,59 @@
 </div>
 
 <!-- featured products -->
+<?php
+  $sql = "SELECT product_id , product_name , product_description , sale_price , discounted_price , tags_name , varient_one , category_name FROM products 
+  LEFT JOIN tags ON tags.tags_id = products.tag
+  LEFT JOIN categories ON categories.category_id = products.category
+  WHERE tag IS NOT NULL AND status = '1' LIMIT 3";
+  $featured_prod_result = mysqli_query($conn, $sql) ;
+  if(mysqli_num_rows($featured_prod_result) > 0){
 
-<div class="container" id="featured_product">
-  <h2 class="heading">Featured Products<span></span></h2>
-  <div class="row">
-    <div class="col-lg-4 col-md-6 my-2">
-      <div class="card" style="margin: 0 auto">
-        <div class="card-header">
-          <a href="product.php">
-            <img src="images/imac.jpg" alt="rover" />
+echo "<div class='container' id='featured_product'>
+  <h2 class='heading'>Featured Products<span></span></h2>
+  <div class='row'>";
+  while($featured_prod_row = mysqli_fetch_assoc($featured_prod_result)){
+    echo "
+    <div class='col-lg-4 col-md-6 my-2'>
+      <div class='card' style='margin: 0 auto'>
+        <div class='card-header'>
+          <a href='product.php?id={$featured_prod_row['product_id']}'>
+            <img src='images/{$featured_prod_row['varient_one']}' alt='image' />
           </a>
         </div>
-        <div class="card-body">
-          <span class="tag cheap_tag">Cheap</span>
-          <h4 class="product_title">
-            <a href="product.php">Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor</a>
+        <div class='card-body'>";
+          if($featured_prod_row['tags_name'] === "cheap"){
+            echo "<span class='tag cheap_tag'>Cheap</span>";
+          }else if($featured_prod_row['tags_name'] === "indemand"){
+            echo "<span class='tag indemand_tag'>INDEMAND</span>";
+          }else if($featured_prod_row['tags_name'] === "trending"){
+            echo "<span class='tag trending_tag'>trending</span>";
+          }
+          echo "
+          <h4 class='product_title'>
+            <a href='product.php?id={$featured_prod_row['product_id']}'>"; echo substr($featured_prod_row['product_name'],0 , 50) . " ..."; echo"</a>
           </h4>
-          <p class="product_description">
-            This iMac 2020 comes in a Space Gray colour it delivers visuals with
-            simple clarity, nothing too fancy.
+          <p class='product_description'>";
+          echo substr($featured_prod_row['product_description'],0,100);
+          echo "
           </p>
-          <span class="price_outer mt-2"
-            ><b>Rs. </b> <span class="cut-price">224,900</span>&nbsp;&nbsp;<span
-              class="price"
-              >224,900</span
-            >/-</span
-          >
+          <span class='price_outer mt-2'>
+            <b>Rs. </b>";
+            if($featured_prod_row['sale_price'] !== $featured_prod_row['discounted_price']){
+              echo "<span class='cut-price'>{$featured_prod_row['sale_price']}</span>";
+            }
+            echo "&nbsp;&nbsp;
+            <span class='price'>{$featured_prod_row['discounted_price']}</span>
+            /-</span>
         </div>
       </div>
-    </div>
-    <div class="col-lg-4 col-md-6 my-2">
-      <div class="card" style="margin: 0 auto">
-        <div class="card-header">
-          <a href="product.php">
-            <img src="images/imac2.jpg" alt="rover" />
-          </a>
-        </div>
-        <div class="card-body">
-          <span class="tag trending_tag">Trending</span>
-          <h4 class="product_title">
-            <a href="product.php">Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor</a>
-          </h4>
-          <p class="product_description">
-            The latest iMac 2020 that comes in silver colour and with 4K Retina
-            display delivers impressively clear visuals, is great for 
-          </p>
-          <span class="price_outer mt-2"
-            ><b>Rs. </b> <span class="cut-price">264,900</span>&nbsp;&nbsp;<span
-              class="price"
-              >264,900</span
-            >/-</span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 my-2">
-      <div class="card" style="margin: 0 auto">
-        <div class="card-header">
-          <a href="product.php">
-            <img src="images/imac3.jpg" alt="rover" />
-          </a>
-        </div>
-        <div class="card-body">
-          <span class="tag indemand_tag">In demand</span>
-          <h4 class="product_title">
-            <a href="product.php">Apple Imac MHK03 - 7th Gen Core i5 2.3Ghz processor</a>
-          </h4>
-          <p class="product_description">
-            Let's talk about the latest iMac 2020 by the company, particularly
-            the Apple iMac MHK33.content
-            creators and designers
-          </p>
-          <span class="price_outer mt-2"
-            ><b>Rs. </b> <span class="cut-price">294,900</span>&nbsp;&nbsp;<span
-              class="price"
-              >294,900</span
-            >/-</span
-          >
-        </div>
-      </div>
-    </div>
+    </div>";
+    }
+    echo "
   </div>
-</div>
-
+</div>";
+  }
+?>
 <!-- contact us form -->
 
 <div class="container" id="contact-us-form">
