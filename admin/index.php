@@ -1,6 +1,6 @@
 <?php 
 include_once("partial/header.php"); 
-include_once("server/config.php");
+include_once("server/config.php"); 
 if(!isset($_SESSION["user_name"])){
         header("Location: login.php");
 }
@@ -36,61 +36,5 @@ if(!isset($_SESSION["user_name"])){
                 </div>
         </div>
 	<br/><br/>
-	<div class="row">
-                <div class="col-8">
-                        <div class="box-8">
-                                <div class="content-box">
-                                        <p>Top Selling Projects <span>Sell All</span></p>
-                                        <br/>
-                                        <table>
-                                                <tr>
-                                                        <th>Company</th>
-                                                        <th>Contact</th>
-                                                        <th>Country</th>
-                                                </tr>
-                                                <tr>
-                                                        <td>Alfreds Futterkiste</td>
-                                                        <td>Maria Anders</td>
-                                                        <td>Germany</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Centro comercial Moctezuma</td>
-                                                        <td>Francisco Chang</td>
-                                                        <td>Mexico</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Ernst Handel</td>
-                                                        <td>Roland Mendel</td>
-                                                        <td>Austria</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Island Trading</td>
-                                                        <td>Helen Bennett</td>
-                                                        <td>UK</td>
-                                                </tr>
-                                        </table>
-                                </div>
-                        </div>
-                </div>
-                <div class="col-4">
-                        <div class="box-4">
-                                <div class="content-box">
-                                        <p>Total Sale <span>Sell All</span></p>
-                                        <div class="circle-wrap">
-                                                <div class="circle">
-                                                        <div class="mask full">
-                                                                <div class="fill"></div>
-                                                        </div>
-                                                        <div class="mask half">
-                                                                <div class="fill"></div>
-                                                        </div>
-                                                        <div class="inside-circle"> 70% </div>
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-        </div>
-</div>
 
 <?php include_once("partial/footer.php"); ?>

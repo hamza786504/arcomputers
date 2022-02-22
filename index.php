@@ -13,7 +13,7 @@
   $sql = "SELECT product_id , product_name , product_description , sale_price , discounted_price , tags_name , varient_one , category_name FROM products 
   LEFT JOIN tags ON tags.tags_id = products.tag
   LEFT JOIN categories ON categories.category_id = products.category
-  WHERE tag IS NOT NULL AND status = '1' LIMIT 3";
+  WHERE tag IS NOT NULL AND status = '1' ORDER BY product_id DESC LIMIT 3";
   $featured_prod_result = mysqli_query($conn, $sql) ;
   if(mysqli_num_rows($featured_prod_result) > 0){
 

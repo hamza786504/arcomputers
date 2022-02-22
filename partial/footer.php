@@ -49,10 +49,10 @@
 
 <!-- Use bootstrap 5 CDN path for bundle.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="js/jquery-code.js"></script>
 <script src="wow.js/wow.min.js"></script>
 <script> new WOW().init(); </script>
 <script src="js/index.js"></script>
+<script src="js/jquery-code.js"></script>
 
 </body>
 </html>

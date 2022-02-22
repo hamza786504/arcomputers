@@ -14,7 +14,9 @@ session_start();
             <!-- link fontawesome css file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <!-- link animate.css -->
-    <link rel="stylesheet" href="animate.css/animate.css">
+    <link rel="stylesheet" href="../animate.css/animate.css">
+    <!-- link dropzon.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js"></script>
             <!-- link custom css file -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -22,7 +24,9 @@ session_start();
 </head>
 <body>
 
-
+<?php 
+if(basename($_SERVER['PHP_SELF']) !== "login.php"){        
+?>
 <div id="mySidenav" class="sidenav">
         <span class="squeez_sidebar">&times;</span>
         <img src="../images/header-logo.png" alt="Logo" class="logo" />
@@ -61,3 +65,5 @@ session_start();
                 </div>
         </div>
 	<br/>
+
+        <?php } ?>

@@ -1,4 +1,5 @@
-<?php include_once('partial/header.php');
+<?php 
+include_once('partial/header.php');
 $product_id = $_GET["id"];
 $single_product_query = "SELECT product_id , product_name , product_tagline , product_description , sale_price , discounted_price , tags_name , stock , varient_one , varient_two , varient_three , varient_four , category_name FROM products 
 LEFT JOIN tags ON tags.tags_id = products.tag
@@ -10,7 +11,7 @@ if(mysqli_num_rows($execute_single_prod_query) == 1){
 echo "
 <div class='wrapper'>
     <div class='product-img'>
-      <img src='images/imac.jpg' id='active_varient'>
+      <img src='images/{$row['varient_one']}' id='active_varient'>
       <div class='varients'>
           <div class='varient active'>
               <img class='varient_img' src='images/{$row['varient_one']}' alt='image' />
@@ -35,9 +36,9 @@ echo "
     </div>
     <div class='product-info'>
       <div class='product-text'>
-        <h1 class='product-title'>{$row['product_name']}</h1>";
+        <h1 class='product-title'>"; echo stripslashes($row['product_name']); echo "</h1>";
             if($row['product_tagline'] !== ""){
-                echo "<h2 class='product-tagline'>{$row['product_tagline']}</h2>";
+                echo "<h2 class='product-tagline'>"; echo stripslashes($row['product_tagline']); echo "</h2>";
             }
             echo "
         <table class='product_quantity'>
@@ -70,7 +71,7 @@ echo "
                 <td><input type='submit' class='addtocart-btn' value='Add to cart' /></td>
             </tr>
         </table>
-        <p class='product-description'>{$row['product_description']}</p>
+        <p class='product-description'>"; echo stripslashes($row['product_description']); echo "</p>
       </div>
     </div>
   </div>";
