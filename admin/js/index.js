@@ -6,15 +6,34 @@
 document.getElementById("add_product").addEventListener("click",function(){
     document.getElementById("add_product_modal_back").style.display = "block";
 });
+
+
+document.getElementById("edit_product").addEventListener("click",async function(){
+    document.getElementById("edit_product_modal_back").style.display = "block";
+
+
+      
+    const id = this.dataset.id;
+    const result = await fetch(`server/fetch_single_product.php?id=${id}`);
+    const res = await result.json();
+    document.getElementById("edit_product_form").innerHTML = res.message;
+});
+
+
+
+
 function close_modal(){
+    document.getElementById("edit_product_modal_back").style.display = "none";
     document.getElementById("add_product_modal_back").style.display = "none";
 }
 
 function price_type(src){
     if(src.value == 1){
         document.getElementById("discounted_price_box").style.display = "none";
+        document.getElementById("edit_discounted_price_box").style.display = "none";
     }else if(src.value == 2){
         document.getElementById("discounted_price_box").style.display = "flex";
+        document.getElementById("edit_discounted_price_box").style.display = "flex";
     }
 }
 

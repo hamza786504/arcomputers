@@ -48,7 +48,7 @@ if(!isset($_SESSION["user_name"])){
                                                                                 <td>{$read_products_row['total_sales']}</td>
                                                                                 <td style='text-align: end;'>
                                                                                 <button class='btn btn-sm btn-warning'>View</button>
-                                                                                <button class='btn btn-sm btn-success'>Edit</button>
+                                                                                <button class='btn btn-sm btn-success' id='edit_product' data-id='{$read_products_row['product_id']}' >Edit</button>
                                                                                 <button id='delete_product' data-id='{$read_products_row['product_id']}' class='btn btn-sm btn-danger'>Delete</button>
                                                                                 </td>
                                                                         </tr>";

@@ -4,6 +4,17 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
     echo "</div>";
 }
 ?>
+
+<div class="message_box success">
+    <p></p>
+    <span class="close_message_box">&times;</span>
+</div>
+<div class="message_box error">
+    <p></p>
+    <span class="close_message_box">&times;</span>
+</div>
+
+
 <div class="add_product_modal_back" id="add_product_modal_back">
     <div class="add_product_modal">
         <h3 class="heading">Add Product</h3>
@@ -99,6 +110,15 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
                     </div>
             </div>
         </form>
+    </div>
+</div>
+
+
+<div class="edit_product_modal_back" id="edit_product_modal_back">
+    <div class="edit_product_modal">
+        <h3 class="heading">Edit Product</h3>
+        <span class="modal_close_btn" id="close_edit_pro_modal" onclick="close_modal()">&times</span>
+        <form id="edit_product_form"></form>
     </div>
 </div>
 

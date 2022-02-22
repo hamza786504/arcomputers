@@ -261,15 +261,14 @@ th {
   background-color: #1b203d;
 }
 
-.add_product_modal_back{
+.add_product_modal_back , .edit_product_modal_back{
   position: fixed;
   top: 0; left: 0;
   height: 100vh; width: 100vw;
   background-color: rgba(0, 0, 0, 0.445);
   display: none;
 }
-
-.add_product_modal{
+.add_product_modal , .edit_product_modal{
   background-color: #272c4a;
   max-width: 1100px;
   width: 90%;
@@ -282,7 +281,7 @@ th {
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
 }
-.add_product_modal > .heading{
+.add_product_modal > .heading , .edit_product_modal > .heading{
   text-transform: capitalize;
   color: white;
   font-size: 2rem;
@@ -474,6 +473,50 @@ input[type="radio"] , input[type="checkbox"]{
 #discounted_price_box{
   display: none;
 }
-.sales_chart{
-  z-index: 100 !important;
+
+
+.message_box{
+  position: absolute;
+  top: -70px;
+  right: 20px;
+  min-height: 65px;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: stretch;
+  transition: all linear 0.3s;
+  z-index: 1000;
+}
+.message_box .close_message_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  flex-basis: 15%;
+  cursor: pointer;
+}
+.message_box p{
+  padding: 10px;
+}
+.success .close_message_box{
+  background-color: #26b36c;
+}
+.success .close_message_box:hover{
+  background-color: #00a552;
+}
+.success{
+  background-color: #2ac276;
+}
+.error .close_message_box{
+  background-color: rgba(131, 23, 23, 0.678);
+}
+.error .close_message_box:hover{
+  background-color: rgba(131, 23, 23);
+}
+.error{
+  background-color: rgb(167, 28, 28);
 }

@@ -1,8 +1,5 @@
 <?php
 include_once("config.php");
-if(isset($_POST["add_product_save"])){
-   $product_name = $_POST["add_product_save"];
-}
 
 $product_name = addslashes($_POST['product_name']);
 $product_tagline = addslashes($_POST['product_tagline']);
