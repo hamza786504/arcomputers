@@ -53,11 +53,11 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
                 <div class="col text-end">
 	                <div class="profile">
                                 <?php
-                                        $get_user_details = "SELECT fname , lname , role FROM admin_users WHERE user_id = '{$_SESSION['user_id']}'";
+                                        $get_user_details = "SELECT username , role FROM admin_users WHERE user_id = '{$_SESSION['user_id']}'";
                                         $get_user_details_result = mysqli_query($conn , $get_user_details);
                                         if(mysqli_num_rows($get_user_details_result) == 1){
                                                 while($get_user_details_row = mysqli_fetch_assoc($get_user_details_result)){
-                                                        echo "<p>{$get_user_details_row['fname']} {$get_user_details_row['lname']}<span>{$get_user_details_row['role']}</span></p>";
+                                                        echo "<p>{$get_user_details_row['username']}<span>{$get_user_details_row['role']}</span></p>";
                                                 }
                                         }
                                 ?>

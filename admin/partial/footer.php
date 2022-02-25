@@ -7,11 +7,11 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
 
 <div class="message_box success">
     <p></p>
-    <span class="close_message_box">&times;</span>
+    <span class="close_message_box" onclick="close_message_box()">&times;</span>
 </div>
 <div class="message_box error">
     <p></p>
-    <span class="close_message_box">&times;</span>
+    <span class="close_message_box" onclick="close_message_box()">&times;</span>
 </div>
 
 
@@ -76,15 +76,18 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
                 <div class="responsive_fields mt-4">
                     <div class="form_field">
                         <label style="margin-right: 20px;">Tags</label>
-                        <label for='none_tag'>None</label>
-                        <input value="0" name="add_badge" checked id="none_tag" type="radio" />
                         <?php
                         $fetch_product_tags = "SELECT tags_id , tags_name FROM tags";
                         $execute_tags_query = mysqli_query($conn , $fetch_product_tags);
                         if(mysqli_num_rows($execute_tags_query) > 0){
                             while($tags_query_row = mysqli_fetch_assoc($execute_tags_query)){
+                                if($tags_query_row['tags_id'] == 4){
+                                    $checked_tag = "checked";
+                                }else{
+                                    $checked_tag = "";
+                                }
                                 echo "<label for='{$tags_query_row['tags_id']}' class='tag {$tags_query_row['tags_name']}_tag'>{$tags_query_row['tags_name']}</label>
-                                <input value='{$tags_query_row['tags_id']}' name='add_badge' id='{$tags_query_row['tags_id']}' type='radio' />";
+                                <input value='{$tags_query_row['tags_id']}' {$checked_tag} name='add_badge' id='{$tags_query_row['tags_id']}' type='radio' />";
                             }
                         }
                         ?>
@@ -121,6 +124,53 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
         <form id="edit_product_form"></form>
     </div>
 </div>
+
+
+<div class="view_product_table_back" id="view_product_table_back">
+    <div class="view_product_table">
+        <span class="modal_close_btn" id="close_pro_table" onclick="close_modal()">&times</span>
+        <table id="product_record">
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="add_category_modal_back" id="add_category_modal_back">
+    <div class="add_category_modal">
+        <h3 class="heading">Add Category</h3>
+        <span class="modal_close_btn" id="close_add_cat_modal" onclick="close_modal()">&times</span>
+        <form id="add_category_form">
+            <div class="from_fields">
+                <div class="form_field" id="category_name_feild">
+                    <input name="category_name" id="category_name" type="text" placeholder="Category Name *" />
+                    <span class="field_message error" ><i class="icon fa fa-info-circle" aria-hidden="true"></i></span>
+                </div>
+                <div class="mt-3 mb-2">
+                    <input type="button" value="Cancel" class="btn btn-danger" onclick="close_modal()" />
+                    <input name="add_category_save" type="submit" id="add_category_save" value="Add category" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="edit_category_modal_back" id="edit_category_modal_back">
+    <div class="edit_category_modal">
+        <h3 class="heading">Edit Category</h3>
+        <span class="modal_close_btn" id="close_edit_cat_modal" onclick="close_modal()">&times</span>
+        <form id="edit_category_form"></form>
+    </div>
+</div>
+
+
+
+
 
 
 <!-- Use jQuery CDN path -->

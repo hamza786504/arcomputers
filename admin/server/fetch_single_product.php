@@ -68,7 +68,11 @@ $data = "<div class='from_fields'>
                         <label>Sale&nbsp;Price</label>
                         <input name='edit_sale_price' id='edit_sale_price' type='number' value='{$row1['sale_price']}' />
                     </div>
-                    <div id='edit_discounted_price_box' class='form_field'>
+                    <div id='edit_discounted_price_box' class='form_field "; 
+                    if($row1["discounted_price"] == $row1["sale_price"]){
+                        $data .= "d-none";
+                    }
+                    $data .="'>
                         <label>Discounted&nbsp;Price</label>
                         <input name='edit_discounted_price' id='edit_discounted_price' type='number' value='{$row1['discounted_price']}' />
                     </div>
@@ -123,7 +127,7 @@ $data = "<div class='from_fields'>
                 </div>
                     <div class='mt-3 mb-2'>
                         <input type='button' value='Cancel' class='btn btn-danger' onclick='close_modal()' />
-                        <input name='edit_product_save' type='submit' id='edit_product_save' value='Update Product' class='btn btn-success' />
+                        <input name='edit_product_save' onclick='close_modal()' type='submit' id='edit_product_save' value='Update Product' class='btn btn-success' />
                     </div>
             </div>";
                     } }

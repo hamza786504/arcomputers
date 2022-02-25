@@ -44,7 +44,7 @@ $sql .= "UPDATE tags SET usedby_products = usedby_products + 1 WHERE tags_id = {
 if(mysqli_multi_query($conn,$sql)){
    echo json_encode(["success" => "Your product has been successfully added"]);
 }else{
-   echo json_encode(["error" => "Your product has been successfully added"]);
+   echo json_encode(["error" => "Your product failed to add"]);
 }
 
 

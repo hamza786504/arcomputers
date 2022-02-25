@@ -44,10 +44,9 @@ body {
   display: none;
 }
 .sidenav {
-  height: 100%;
+  height: 100vh;
   width: 70px;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color: #272c4a;
@@ -261,14 +260,14 @@ th {
   background-color: #1b203d;
 }
 
-.add_product_modal_back , .edit_product_modal_back{
+.add_product_modal_back , .edit_product_modal_back , .add_category_modal_back , .edit_category_modal_back{
   position: fixed;
   top: 0; left: 0;
   height: 100vh; width: 100vw;
   background-color: rgba(0, 0, 0, 0.445);
   display: none;
 }
-.add_product_modal , .edit_product_modal{
+.add_product_modal , .edit_product_modal , .add_category_modal , .edit_category_modal{
   background-color: #272c4a;
   max-width: 1100px;
   width: 90%;
@@ -281,7 +280,7 @@ th {
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
 }
-.add_product_modal > .heading , .edit_product_modal > .heading{
+.add_product_modal > .heading , .edit_product_modal > .heading , .add_category_modal > .heading , .edit_category_modal > .heading{
   text-transform: capitalize;
   color: white;
   font-size: 2rem;
@@ -386,6 +385,10 @@ input[type="radio"] , input[type="checkbox"]{
 .trending_tag {
   background-color: #cd5b9f;
 }
+.none_tag{
+  background-color: black;
+  color: white;
+}
 .modal_close_btn{
   position: absolute;
   top: 20px;
@@ -476,8 +479,7 @@ input[type="radio"] , input[type="checkbox"]{
 
 
 .message_box{
-  position: absolute;
-  top: -70px;
+  position: fixed;
   right: 20px;
   min-height: 65px;
   max-width: 350px;
@@ -500,7 +502,9 @@ input[type="radio"] , input[type="checkbox"]{
   cursor: pointer;
 }
 .message_box p{
+  flex: 1;
   padding: 10px;
+  margin-bottom: 0 !important;
 }
 .success .close_message_box{
   background-color: #26b36c;
@@ -509,6 +513,8 @@ input[type="radio"] , input[type="checkbox"]{
   background-color: #00a552;
 }
 .success{
+  top: -70px;
+  color: white;
   background-color: #2ac276;
 }
 .error .close_message_box{
@@ -518,5 +524,64 @@ input[type="radio"] , input[type="checkbox"]{
   background-color: rgba(131, 23, 23);
 }
 .error{
+  top: -70px;
+  color: white;
   background-color: rgb(167, 28, 28);
+}
+
+.view_product_table_back{
+  position: fixed;
+  top:0; left: 0;
+  height: 100vh; width: 100vw;
+  background-color: rgba(0, 0, 0, 0.445);
+  display: none;
+}
+.view_product_table_back .view_product_table{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #1b203d;
+  min-height: 100px;
+  max-height: 90vh;;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+.view_product_table{
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.view_product_table table{
+  margin-top: 70px;
+}
+.view_product_table table tr{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+} 
+.view_product_table table tr td{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex: 1 !important;
+}
+
+.view_product_table table tr td:first-child{
+  max-width: 170px;
+}
+.view_product_table table tr td{
+  border-bottom: none;
+}
+.view_product_table table tr{
+  border-bottom: 1px solid #81818140
+}
+.cut-price {
+  color: #47bcd4;
+  text-decoration: line-through;
+}
+.price {
+  font-weight: bold;
 }

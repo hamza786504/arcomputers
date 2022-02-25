@@ -11,9 +11,9 @@ if(isset($_SESSION["user_name"])){
                 <img src="../images/header-logo.png" alt="" />
             </div>
             <div class="form_fields">
-                <form>
+                <form id="login_form">
                     <div class="form_field">
-                        <input id="login_email" type="email" placeholder="Email *" />
+                        <input id="login_username" type="text" placeholder="Username *" />
                         <span class="field_message error" ><i class="icon fa fa-info-circle" aria-hidden="true"></i></span>
                     </div>
                     <div class="form_field">
@@ -21,7 +21,7 @@ if(isset($_SESSION["user_name"])){
                         <span class="field_message error" ><i class="icon fa fa-info-circle" aria-hidden="true"></i></span>
                     </div>
                     <div class="responsive_fields my-4">
-                        <input id="login_form"  type="submit" value="Login" class="form_btn" />
+                        <input type="submit" value="Login" class="form_btn" />
                     </div>
                 </form>
             </div>

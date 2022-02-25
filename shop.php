@@ -36,10 +36,20 @@
           }
           echo "
           <h4 class='product_title'>
-            <a href='product.php?id={$shop_prod_row['product_id']}'>"; echo substr(stripslashes($shop_prod_row['product_name']),0 , 40) . " ..."; echo"</a>
+            <a href='product.php?id={$shop_prod_row['product_id']}'>";
+             if(strlen($shop_prod_row['product_name']) > 40){
+              echo substr($shop_prod_row['product_name'],0 , 40) . " ..."; 
+            }else{
+              echo substr($shop_prod_row['product_name'],0 , 40); 
+            }
+            echo"</a>
           </h4>
           <p class='product_description'>";
-          echo substr(stripslashes($shop_prod_row['product_description']),0,80) . " ...";
+          if(strlen($shop_prod_row['product_description']) > 80){
+            echo substr($shop_prod_row['product_description'],0,80) . "...";
+          }else{
+            echo substr($shop_prod_row['product_description'],0,80);
+          }
           echo "
           </p>
           <span class='price_outer mt-2'>
@@ -54,19 +64,15 @@
       </div>
     </div>";
   } }
-echo "</div></div>
-        <ul class='custom-pagination'>";
+echo "</div></div>";
         $pagination_query = "SELECT product_id , product_name , product_description , sale_price , discounted_price , tags_name , varient_one ,status, category_name FROM products 
         LEFT JOIN tags ON tags.tags_id = products.tag
         LEFT JOIN categories ON categories.category_id = products.category WHERE status = 1";
         $pagination_result = mysqli_query($conn , $pagination_query);
         if(mysqli_num_rows($pagination_result) > 0){
-          $total_pages = ceil(mysqli_num_rows($pagination_result) / $limit);
-
-
-
-
-            
+          $total_pages = ceil(mysqli_num_rows($pagination_result) / $limit);  
+          if($total_pages > 1){
+            echo "<ul class='custom-pagination'>";
             if($page_no >= 2){
               echo "<li><a href='shop.php?page_no=" . $page_no - 1 . "'>Prev</a></li>";
             }
@@ -76,13 +82,11 @@ echo "</div></div>
                 echo "<li><a href='shop.php?page_no=" . $i . "'>" . $i . "</a></li>";
               }
             }
-            
-
-        
-          if($page_no < $total_pages){
-            echo "<li><a href='shop.php?page_no=" . $page_no + 1 . "'>Next</a></li>";
+            if($page_no < $total_pages){
+              echo "<li><a href='shop.php?page_no=" . $page_no + 1 . "'>Next</a></li>";
+            }
+            echo "</ul>";
           }
         }
-        echo "</ul>";
         ?>
 <?php include_once ("partial/footer.php"); ?>

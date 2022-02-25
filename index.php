@@ -39,10 +39,20 @@ echo "<div class='container' id='featured_product'>
           }
           echo "
           <h4 class='product_title'>
-            <a href='product.php?id={$featured_prod_row['product_id']}'>"; echo substr($featured_prod_row['product_name'],0 , 50) . " ..."; echo"</a>
+            <a href='product.php?id={$featured_prod_row['product_id']}'>"; 
+            if(strlen($featured_prod_row['product_name']) > 50){
+              echo substr($featured_prod_row['product_name'],0 , 50) . " ..."; 
+            }else{
+              echo substr($featured_prod_row['product_name'],0 , 50); 
+            }
+            echo "</a>
           </h4>
           <p class='product_description'>";
-          echo substr($featured_prod_row['product_description'],0,100);
+          if(strlen($featured_prod_row['product_description']) > 100){
+            echo substr($featured_prod_row['product_description'],0,100) . "...";
+          }else{
+            echo substr($featured_prod_row['product_description'],0,100);
+          }
           echo "
           </p>
           <span class='price_outer mt-2'>
@@ -66,29 +76,29 @@ echo "<div class='container' id='featured_product'>
 
 <div class="container" id="contact-us-form">
   <h1 class="heading">Contact Us<span></span></h1>
-  <form action="" method="post">
+  <form id="submit_contact_form" onsubmit="sendEmail(); reset(); return false;">
     <div class="row input-container">
       <div class="col-xs-12">
         <div class="styled-input wide">
-          <input type="text" required />
+          <input id="customer_name" type="text" required />
           <label>Name</label>
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
         <div class="styled-input">
-          <input type="text" required />
+          <input id="customer_email" type="text" required />
           <label>Email</label>
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
         <div class="styled-input">
-          <input type="text" required />
+          <input id="customer_phone" name="customer_phone" type="tel" pattern="[0-9]{11}" required />
           <label>Phone Number</label>
         </div>
       </div>
       <div class="col-xs-12">
         <div class="styled-input wide">
-          <textarea required></textarea>
+          <textarea id="customer_message" required></textarea>
           <label>Message</label>
         </div>
       </div>

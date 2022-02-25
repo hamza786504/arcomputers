@@ -46,9 +46,6 @@ include_once("config.php");
           ">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">New Arrivals</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="index.php#contact-us-form">Contact Us</a>
         </li>
       </ul>

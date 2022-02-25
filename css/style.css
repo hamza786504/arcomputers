@@ -249,8 +249,10 @@ a.nav-link:hover {
   margin-top: 60px;
 }
 footer .container {
-  width: 85%;
+  max-width: 100%;
+  width: 95%;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 footer .container .row:first-child {
   display: flex;
@@ -273,13 +275,13 @@ footer .container .row:first-child .col ul li {
   color: white;
 }
 footer .container .row:first-child .col ul li:hover a {
-  padding-left: 25px;
+  color: green;
 }
 footer .container .row:first-child .col ul li a {
   display: block;
   transition: all linear 0.2s;
   padding-left: 10px;
-  color: var(--text_color);
+  color: white;
 }
 .container .row.social_icons {
   margin: 25px auto;

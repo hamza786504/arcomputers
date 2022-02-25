@@ -3,21 +3,19 @@
 
 
 
-document.getElementById("add_product").addEventListener("click",function(){
-    document.getElementById("add_product_modal_back").style.display = "block";
-});
 
 
-document.getElementById("edit_product").addEventListener("click",async function(){
-    document.getElementById("edit_product_modal_back").style.display = "block";
+// document.getElementById("edit_product").addEventListener("click",async function(){
+//     document.getElementById("edit_product_modal_back").style.display = "block";
 
 
       
-    const id = this.dataset.id;
-    const result = await fetch(`server/fetch_single_product.php?id=${id}`);
-    const res = await result.json();
-    document.getElementById("edit_product_form").innerHTML = res.message;
-});
+//     const id = this.dataset.id;
+//     const result = await fetch(`server/fetch_single_product.php?id=${id}`);
+//     const res = await result.json();
+//     document.getElementById("edit_product_form").innerHTML = res.message;
+    
+// });
 
 
 
@@ -25,8 +23,31 @@ document.getElementById("edit_product").addEventListener("click",async function(
 function close_modal(){
     document.getElementById("edit_product_modal_back").style.display = "none";
     document.getElementById("add_product_modal_back").style.display = "none";
+    document.getElementById("view_product_table_back").style.display = "none";
+    document.getElementById("add_category_modal_back").style.display = "none";
+    document.getElementById("edit_category_modal_back").style.display = "none";
 }
 
+function close_message_box(){
+    document.querySelector(".error").style.top = "-100px";
+    document.querySelector(".success").style.top = "-100px";
+}
+function show_success_message(message){
+    document.querySelector(".success").style.top = "30px";
+    document.querySelector(".success p").innerHTML = message;
+    setTimeout(() => {
+        document.querySelector(".success").style.top = "-70px";
+        document.querySelector(".success p").innerHTML = "";
+    },5000);
+}
+function show_error_message(message){
+    document.querySelector(".error").style.top = "30px";
+    document.querySelector(".error p").innerHTML = message;
+    setTimeout(() => {
+        document.querySelector(".error").style.top = "-100px";
+        document.querySelector(".error p").innerHTML = "";
+    },4000);
+}
 function price_type(src){
     if(src.value == 1){
         document.getElementById("discounted_price_box").style.display = "none";
@@ -79,36 +100,16 @@ function price_type(src){
 
 
 
+function open_add_product_model(){
+    document.getElementById("add_product_modal_back").style.display = "block";
+}
+function open_add_category_model(){
+    document.getElementById("add_category_modal_back").style.display = "block";
+}
 
 
-document.getElementById("delete_product").addEventListener("click",async function(){
-    const id = this.dataset.id;
-    if(confirm("Are you sure you want to delete this product")){
-        const result = await fetch(`server/delete_product.php?id=${id}`);
-        const res = await result.json();
-        console.log(res);
-    }
-})
 
 
-document.getElementById("login_form").addEventListener("click",async function(e){
-    e.preventDefault();
 
-    const email = document.getElementById("login_email").value;
-    const password = document.getElementById("login_password").value;
-    const result = await fetch("server/checklogin.php",{
-        method : "POST",
-        body : JSON.stringify({email : email , password : password}),
-        headers : {
-            "Content-Type" : "Appliction/json"
-        }
-    });
-    const res = await result.json();
-    if(res.error === "Something wrong"){
-        alert(res.error);
-    }else if(res.success === "authenticated"){
-        window.location.href = 'index.php';
-    }
-});
 
 
