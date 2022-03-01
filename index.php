@@ -1,10 +1,10 @@
 <?php include_once ("partial/header.php"); ?>
 
-<div class="hero-image" style="height: 100%">
+<div class="hero-image">
   <div class="hero-text">
     <h1>Al Rahman Computes</h1>
-    <p>We make it happen</p>
-    <a class="hero_button" href="#featured_product">FIND BEST IMAC</a>
+    <p>We make IT happen</p>
+    <a class="hero_button" href="#featured_product">FIND BEST PRODUCTS</a>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
   $sql = "SELECT product_id , product_name , product_description , sale_price , discounted_price , tags_name , varient_one , category_name FROM products 
   LEFT JOIN tags ON tags.tags_id = products.tag
   LEFT JOIN categories ON categories.category_id = products.category
-  WHERE tag IS NOT NULL AND status = '1' ORDER BY product_id DESC LIMIT 3";
+  WHERE tag != '4' AND status = '1' ORDER BY product_id DESC LIMIT 6";
   $featured_prod_result = mysqli_query($conn, $sql) ;
   if(mysqli_num_rows($featured_prod_result) > 0){
 
@@ -71,44 +71,6 @@ echo "<div class='container' id='featured_product'>
   </div>
 </div>";
   }
+  
+include_once ("partial/footer.php"); 
 ?>
-<!-- contact us form -->
-
-<div class="container" id="contact-us-form">
-  <h1 class="heading">Contact Us<span></span></h1>
-  <form id="submit_contact_form" onsubmit="sendEmail(); reset(); return false;">
-    <div class="row input-container">
-      <div class="col-xs-12">
-        <div class="styled-input wide">
-          <input id="customer_name" type="text" required />
-          <label>Name</label>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="styled-input">
-          <input id="customer_email" type="text" required />
-          <label>Email</label>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="styled-input">
-          <input id="customer_phone" name="customer_phone" type="tel" pattern="[0-9]{11}" required />
-          <label>Phone Number</label>
-        </div>
-      </div>
-      <div class="col-xs-12">
-        <div class="styled-input wide">
-          <textarea id="customer_message" required></textarea>
-          <label>Message</label>
-        </div>
-      </div>
-      <div class="col-xs-12">
-        <input type="submit" class="addtocart-btn" value="Contact us" />
-      </div>
-    </div>
-  </form>
-</div>
-
-<!-- testimonials -->
-
-<?php include_once ("partial/footer.php"); ?>

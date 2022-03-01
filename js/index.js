@@ -1,30 +1,3 @@
-
-
-
-
-function sendEmail(){
-  Email.send({
-    Host : "smtp.gmail.com",
-    Username : "hamza786504@gmail.com",
-    Password : "laptop$645",
-    To : 'hamza786504@gmail.com',
-    From : document.getElementById("customer_email").value,
-    Subject : "Your website visiter want to ask you a question",
-    Body : "Client Name :" + document.getElementById("customer_name").value
-         + "<br /> Client Phone Number :" + document.getElementById("customer_phone").value
-         + "<br /> Client Message :" + document.getElementById("customer_message").value
-  }).then(
-    message => alert("Thanks for contacting us we will be back to you very soon!")
-  );
-}
-
-
-
-
-
-
-
-
 let quantity = document.getElementById('quantity');
 let data = 0;
 //printing default value of data that is 0 in h2 tag

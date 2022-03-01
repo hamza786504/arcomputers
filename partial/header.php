@@ -45,9 +45,6 @@ include_once("config.php");
           <?php if(basename($_SERVER["PHP_SELF"]) === "shop.php"){echo "active";} ?>
           ">Shop</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php#contact-us-form">Contact Us</a>
-        </li>
       </ul>
     </div>
   </div>

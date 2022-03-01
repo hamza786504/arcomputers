@@ -99,13 +99,13 @@ function price_type(src){
 
 
 
-
-function open_add_product_model(){
+document.getElementById("add_product").addEventListener("click" , function(){
     document.getElementById("add_product_modal_back").style.display = "block";
-}
-function open_add_category_model(){
+});
+document.getElementById("add_category").addEventListener("click" , function(){
     document.getElementById("add_category_modal_back").style.display = "block";
-}
+});
+
 
 
 

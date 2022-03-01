@@ -100,11 +100,24 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
                     <label for="publish_radio">Publish</label>
                     <input value="1" name="publish_type" checked id="publish_radio" type="radio" />
                 </div>         
-                <div class="form_field">
-                    <input type="file" id='files' name="files[]" multiple>
+                <div class="form_field mt-3">
+                    <h6 style="color : white; margin-right: 30px;">Main image</h6>
+                    <input type="file" id='varient_one' required name="varient_one" style="color : white;">
+                </div>
+                <div class="form_field mt-3">
+                    <h6 style="color : white; margin-right: 30px;">Second varient</h6>
+                    <input type="file" id='varient_two' name="varient_two" style="color : white;">
+                </div>
+                <div class="form_field mt-3">
+                    <h6 style="color : white; margin-right: 30px;">Third varient</h6>
+                    <input type="file" id='varient_three' name="varient_three" style="color : white;">
+                </div>
+                <div class="form_field mt-3">
+                    <h6 style="color : white; margin-right: 30px;">Forth varient</h6>
+                    <input type="file" id='varient_four' name="varient_four" style="color : white;">
                 </div>
                 <div class="form_field" id="product_description_field">
-                    <textarea name="description" id="description" placeholder="Description *"></textarea>
+                    <textarea name="description" required id="description" placeholder="Description *"></textarea>
                     <span class="field_message error" ><i class="icon fa fa-info-circle" aria-hidden="true"></i></span>
                 </div>
                     <div class="mt-3 mb-2">
@@ -178,7 +191,7 @@ if(basename($_SERVER['PHP_SELF']) !== "login.php"){
 <!-- Use bootstrap 5 CDN path for bundle.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/jquery-code.js"></script>
     <script src="../wow.js/wow.min.js"></script>

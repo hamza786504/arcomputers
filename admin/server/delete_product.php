@@ -23,6 +23,7 @@ if(mysqli_num_rows($result) == 1){
             echo json_encode(["error" => "Product could not deleted!"]);
         }
     }
+}else{
+    echo json_encode(["error" => "Product could not deleted due to server error!"]);
 }
-echo json_encode(["error" => "Product could not deleted due to server error!"]);
 ?>

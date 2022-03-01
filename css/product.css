@@ -43,12 +43,12 @@
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #ffffff;
-    background-color: #00a553;
+    background-color: #343d46;
     cursor: pointer;
     outline: none;
 }
 .addtocart-btn:hover {
-    background-color: #46a174;
+    background-color: black;
 }
 table.product_quantity{
     margin: 20px 0;

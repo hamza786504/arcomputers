@@ -42,16 +42,21 @@ echo "
             }
             echo "
         <table class='product_quantity'>
-            <tr>
-                <td><h4>Quantity</h4></td>
-                <td>
-                    <div class='quantity-counter'>
-                        <button class='counter-change-btn' id='decrement_quantity' onclick='decreament_quantity()'>-</button>
-                        <h2 class='quantity' id='quantity' style='color: black; display: inline-block; margin_bottom:0;'></h2>
-                        <button class='counter-change-btn' id='increment_quantity' onclick='increament_quantity({$row['stock']})'>+</button>
-                    </div>
-                </td>
-            </tr>
+            <tr>";
+                    if($row['stock'] == 0){
+                        echo "<td colspan='2'><h5>This product is out of stock</h5></td>";
+                    }else{
+                        echo "
+                        <td><h4>Quantity</h4></td>
+                        <td>
+                            <div class='quantity-counter'>
+                                <button class='counter-change-btn' id='decrement_quantity' onclick='decreament_quantity()'>-</button>
+                                <h2 class='quantity' id='quantity' style='color: black; display: inline-block; margin_bottom:0;'></h2>
+                                <button class='counter-change-btn' id='increment_quantity' onclick='increament_quantity({$row['stock']})'>+</button>
+                            </div>
+                        </td>";
+                    }
+    echo " </tr>
             <tr>
                 <td><h4>Prize</h4></td>
                 <td>

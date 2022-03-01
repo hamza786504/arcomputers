@@ -120,7 +120,7 @@ $data = "<div class='from_fields'>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label for='publish_radio'>Publish</label>
                     <input value='1' name='edit_publish_type' {$publish_type_status} id='edit_publish_radio' type='radio' />
-                </div>   
+                </div>
                 <div class='form_field' id='edit_product_description_field'>
                     <textarea name='edit_description' id='edit_description' placeholder='Description *'>{$product_description}</textarea>
                     <span class='field_message error' ><i class='icon fa fa-info-circle' aria-hidden='true'></i></span>

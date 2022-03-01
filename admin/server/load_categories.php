@@ -34,7 +34,7 @@ $cat_data = "
                         }
                 }else{
                     $cat_data .= "
-                    <tr><th colspan='5'><h1 style='text-align: center;'>Please add category before you add product</h1></th><tr>";
+                    <tr><th colspan='5'><h2 style='text-align: center;'>Please add category before you add product</h2></th><tr>";
                 }
                 $cat_data .= "
                     </tbody>

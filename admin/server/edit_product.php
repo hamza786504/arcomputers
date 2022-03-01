@@ -43,10 +43,4 @@ if(mysqli_num_rows($result1) == 1){
 
 }
 
-
-
-
-
-echo json_encode(["message" => $sql]);
-
 ?>

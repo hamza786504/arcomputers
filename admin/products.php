@@ -5,8 +5,8 @@ if(!isset($_SESSION["user_name"])){
 ?>
 <div class="row" style="min-height: 100px; text-align: end;">
         <div class="col">
-                <button class="btn btn-secondary" id="add_product" onclick="open_add_product_model()">Add products</button>
-                <button class="btn btn-secondary" id="add_category" onclick="open_add_category_model()">Add category</button>
+                <button class="btn btn-secondary" id="add_product">Add products</button>
+                <button class="btn btn-secondary" id="add_category">Add category</button>
         </div>
 </div>
 <div class="row mb-5">

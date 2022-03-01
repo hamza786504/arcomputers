@@ -20,7 +20,7 @@
                                 <div class="col">
                                         <h3>Contact info</h3>
                                         <ul>
-                                                <li><i class="fas fa-phone icon"></i><a href="tel:+923234548823">+923234548823</a></li>
+                                                <li><i class="fas fa-phone icon"></i><a href="tel:+923018531671">+923018531671</a></li>
                                                 <li><i class="fas fa-envelope icon"></i><a href="mailto:alrahmancomputers0301@gmail.com">alrahmancomputers0301@gmail.com</a></li>
                                                 <li style="display:flex; align-items: start; flex-direction: column;" >
                                                         <span><i class="fa fa-map-marker icon"></i>&nbsp;&nbsp;Location</span>
