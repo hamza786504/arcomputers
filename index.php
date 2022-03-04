@@ -2,7 +2,7 @@
 
 <div class="hero-image">
   <div class="hero-text">
-    <h1>Al Rahman Computes</h1>
+    <h1>Al Rehman Computers</h1>
     <p>We make IT happen</p>
     <a class="hero_button" href="#featured_product">FIND BEST PRODUCTS</a>
   </div>

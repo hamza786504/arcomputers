@@ -107,7 +107,7 @@ a.nav-link:hover {
   text-shadow: 1px 1px #000;
 }
 .hero-image {
-  background-image: url("https://s14.postimg.cc/5i4g1gqwh/Untitled-1.jpg");
+  background-image: linear-gradient(90deg , rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0.6)) , url("../images/heroimage.jpg");
   height: 70vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -383,7 +383,16 @@ input[type="checkbox"]:checked + label {
   color: #f00;
   font-style: normal;
 }
-
+.whatsapp_chat{
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	z-index: 11;
+}
+.whatsapp_chat img{
+  height:70px;
+  width:70px;
+}
 /* tstimonials section styling */
 
 /*  media queries for website

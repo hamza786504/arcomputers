@@ -47,6 +47,22 @@ $(document).ready(function () {
     }
   }
 
+
+  function edit_check_varient(varient){
+    if(varient.files[0].size > 5242880){
+      show_error_message("Please upload image of size less than 5MB");
+      $("#edit_varient_one").val("");
+    }
+    var ext = varient.value.split(".");
+    ext = varient.value.split(".").pop().toLowerCase();
+    var arrayExtensions = ["jpg" , "jpeg" , "png" , "webp" , "gif"];
+    if(arrayExtensions.lastIndexOf(ext) == -1){
+      show_error_message("Please upload image of extension type jpg, jpeg, png, webp or gif only");
+      $(`#${varient.id}`).val("");
+    }
+  }
+
+
   $("#varient_one").change(function(){
     check_varient(this);
   });
@@ -60,6 +76,19 @@ $(document).ready(function () {
     check_varient(this);
   });
 
+
+  $(document).on("change" , "#edit_varient_one" , function(){
+    edit_check_varient(this);
+  });
+  $(document).on("change" , "#edit_varient_two" , function(){
+    edit_check_varient(this);
+  });
+  $(document).on("change" , "#edit_varient_three" , function(){
+    edit_check_varient(this);
+  });
+  $(document).on("change" , "#edit_varient_four" , function(){
+    edit_check_varient(this);
+  });
  
 
   $("#add_product_form").on("submit", function (e) {
@@ -233,7 +262,7 @@ $(document).ready(function () {
   })
 
 
-  $("#edit_product_form").on("submit",function (e) {
+  $(document).on("submit", "#edit_product_form" ,function (e) {
     e.preventDefault();
     const name = $("#edit_product_name").val();
     const tagline = $("#edit_product_tagline").val();
@@ -274,15 +303,16 @@ $(document).ready(function () {
         processData: false,
         success: function (response) {
           const res = JSON.parse(response);
-          $("#load_categories").html("");
-          fetch_products();
-          fetch_categories();
-          if(res.success){
-            $("#edit_product_modal_back").css({"display" : "none"});
-          }else if(res.error){
-            $("#edit_product_modal_back").css({"display" : "none"});
-            alert("Product Could not add due to some server error!");
-          }
+          console.log(res.message);
+          // $("#load_categories").html("");
+          // fetch_products();
+          // fetch_categories();
+          // if(res.success){
+          //   $("#edit_product_modal_back").css({"display" : "none"});
+          // }else if(res.error){
+          //   $("#edit_product_modal_back").css({"display" : "none"});
+          //   alert("Product Could not add due to some server error!");
+          // }
         }
       });
     }

@@ -47,7 +47,7 @@
 <footer class="footer">
         <h5>All copyrights &copy; reserved and registed &reg; <span id="year">2022</span></h5>
 </footer>
-
+<a href="https://wa.me/923018531671?text=Hi, i have a query" target="_blank" class="whatsapp_chat"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/598px-WhatsApp.svg.png"/></a>
 <!-- jquery cdn link -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

@@ -121,6 +121,60 @@ $data = "<div class='from_fields'>
                     <label for='publish_radio'>Publish</label>
                     <input value='1' name='edit_publish_type' {$publish_type_status} id='edit_publish_radio' type='radio' />
                 </div>
+                        
+
+                <div class='form_field mt-3'>
+                    <h6 style='color : white; margin-right: 30px;'>Main image</h6>
+                    <span style='display:flex; flex-direction: column; flex-wrap: wrap;'>
+                        <img class='mt-3' src='../images/{$row1['varient_one']}' alt='{$row1['varient_one']}' style='max-width: 150px; max-height: 60px; height:100%;' />
+                        <input type='file' id='edit_varient_one' name='edit_varient_one' style='color : white;'>
+                        <input type='hidden' id='old_varient_one' name='old_varient_one' value='{$row1['varient_one']}' />
+                    </span>
+                </div>
+                <div class='form_field mt-3'>
+                    <h6 style='color : white; margin-right: 30px;'>Second varient</h6>
+                    <span style='display:flex; flex-direction: column; flex-wrap: wrap;'>";
+                    if($row1['varient_two'] != ""){
+                        $varient_two_val = $row1['varient_two'];
+                        $data .= "<img class='mt-3' src='../images/{$row1['varient_two']}' alt='{$row1['varient_two']}' style='max-width: 150px; max-height: 60px; height:100%;' />";
+                    }else{
+                        $varient_two_val = "";
+                    }
+                    $data .= "
+                        <input type='file' id='edit_varient_two' name='edit_varient_two' style='color : white;'>
+                        <input type='hidden' id='old_varient_two' name='old_varient_two' value='{$row1['varient_two']}' />
+                    </span>
+                </div>
+                <div class='form_field mt-3'>
+                    <h6 style='color : white; margin-right: 30px;'>Third varient</h6>
+                    <span style='display:flex; flex-direction: column; flex-wrap: wrap;'>";
+                    if($row1['varient_three'] != ""){
+                        $varient_three_val = $row1['varient_three'];
+                        $data .= "<img class='mt-3' src='../images/{$row1['varient_three']}' alt='{$row1['varient_three']}' style='max-width: 150px; max-height: 60px; height:100%;' />";
+                    }else{
+                        $varient_three_val = "";
+                    }
+                    $data .= "
+                        <input type='file' id='edit_varient_three' name='edit_varient_three' style='color : white;'>
+                        <input type='hidden' id='old_varient_three' name='old_varient_three' value='{$row1['varient_three']}' />
+                    </span>
+                </div>
+                <div class='form_field mt-3'>
+                    <h6 style='color : white; margin-right: 30px;'>Forth varient</h6>
+                    <span style='display:flex; flex-direction: column; flex-wrap: wrap;'>";
+                    if($row1['varient_four'] != ""){
+                        $varient_four_val = $row1['varient_four'];
+                        $data .= "<img class='mt-3' src='../images/{$row1['varient_four']}' alt='{$row1['varient_four']}' style='max-width: 150px; max-height: 60px; height:100%;' />";
+                    }else{
+                        $varient_four_val = "";
+                    }
+                    $data .= "
+                        <input type='file' id='edit_varient_four' name='edit_varient_four' style='color : white;'>
+                        <input type='hidden' id='old_varient_four' name='old_varient_four' value='{$row1['varient_four']}' />
+                    </span>
+                </div>
+
+
                 <div class='form_field' id='edit_product_description_field'>
                     <textarea name='edit_description' id='edit_description' placeholder='Description *'>{$product_description}</textarea>
                     <span class='field_message error' ><i class='icon fa fa-info-circle' aria-hidden='true'></i></span>
