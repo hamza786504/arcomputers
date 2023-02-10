@@ -41,9 +41,9 @@ include_once("config.php");
           " aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a href="shop.php" class="nav-link
-          <?php if(basename($_SERVER["PHP_SELF"]) === "shop.php"){echo "active";} ?>
-          ">Shop</a>
+          <a href="products.php" class="nav-link
+          <?php if(basename($_SERVER["PHP_SELF"]) === "products.php"){echo "active";} ?>
+          ">Products</a>
         </li>
       </ul>
     </div>

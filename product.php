@@ -63,7 +63,7 @@ echo "
                     //     </tr>";
                     }
             echo "<tr>
-                <td><h4>Prize</h4></td>
+                <td><h4>Price</h4></td>
                 <td>
                     <span class='price_outer mt-2'>
             <b>Rs. </b>";
